@@ -119,7 +119,7 @@ function searchDatabase(){
 
 
 
-
+  divImg.style("display","none");
 
 
   function gotData(){

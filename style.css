@@ -37,7 +37,7 @@ button{
   border: 0;
   border-radius: 2rem;
 }
-  
+
 input{
   border:0;
   background-color: rgba(255,255,255,0.3);
@@ -45,7 +45,7 @@ input{
   padding: 0.2rem;
   border-radius: 2rem;
   text-indent: 0.5rem;
-  
+
 }
 
 .owf{
@@ -66,23 +66,16 @@ input{
   top:5rem;
   left:50%;
   transform: translate(-50%,50%);
-  
+
 }
 
 .current{
   padding-left: 0.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#logo{
+	padding: 1.5rem 0 0rem 1.5rem;
+}
+#logo img{
+	max-width: 100%;
+}
