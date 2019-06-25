@@ -1,4 +1,4 @@
-﻿var data;
+var data;
 var homedata;
 var forCastData;
 
@@ -31,8 +31,8 @@ function setup() {
   canvas.style('z-index', '-1');
   background(59, 112, 128);
   fill(0);
-  
-  
+
+
   divImg = createDiv(" ");
   divSec = createDiv(" ");
 
@@ -54,7 +54,7 @@ function setup() {
     alert("navigator.geolocation is not available");
   }
   navigator.geolocation.getCurrentPosition(setPos);
-  
+
 
 }
 function setPos(position) {
@@ -62,7 +62,7 @@ function setPos(position) {
   lng = position.coords.longitude;
 
 
-  var pha = "https://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&";
+  var pha = "http://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&";
   var ret = "lat=" + lat + "&lon=" + lng;
 
 
@@ -86,8 +86,8 @@ function setPos(position) {
     var lydia = homedata.main.temp_min;
     var alisson = homedata.main.temp_max;
     var beackonHills = homedata.sys.country;
-    var weCode = homedata.cod;
-    
+    var weCode = homedata.weather[0].id;
+
 
 
 
@@ -113,11 +113,11 @@ function draw() {
 
 function searchDatabase(){
   userQuery = searchbox.value();
-  searchQuery = "https://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&q=" + userQuery;        // api has a separate link for search && Api key is "/1/"
+  searchQuery = "http://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&q=" + userQuery;        // api has a separate link for search && Api key is "/1/"
 
   data = loadJSON(searchQuery,gotData);
 
-  
+
 
 
 
@@ -128,7 +128,7 @@ function searchDatabase(){
     noStroke();
     rect(width/2,230,600,220,5);
     textAlign(CENTER);
-    
+
     var tempName = data.name;
     var temps = data.main.temp;
     var type = data.weather[0].main;
@@ -136,7 +136,7 @@ function searchDatabase(){
     var maxTemp = data.main.temp_max;
     var TempNameCountry = data.sys.country;
     var timeChecked = data.dt;
-    var icon = data.cod;
+    var icon = data.weather[0].id;
     console.log(icon);
 
 
