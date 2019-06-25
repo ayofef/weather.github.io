@@ -62,7 +62,7 @@ function setPos(position) {
   lng = position.coords.longitude;
 
 
-  var pha = "http://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&";
+  var pha = "https://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&";
   var ret = "lat=" + lat + "&lon=" + lng;
 
 
@@ -113,7 +113,7 @@ function draw() {
 
 function searchDatabase(){
   userQuery = searchbox.value();
-  searchQuery = "http://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&q=" + userQuery;        // api has a separate link for search && Api key is "/1/"
+  searchQuery = "https://api.openweathermap.org/data/2.5/weather?appid=d38c13ea23a6f4f05b26d02279c06a2d&units=metric&q=" + userQuery;        // api has a separate link for search && Api key is "/1/"
 
   data = loadJSON(searchQuery,gotData);
 
